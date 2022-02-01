@@ -1,0 +1,12 @@
+
+
+.menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    width: auto;
+}
+
+.list {
+    display: flex;
+}
