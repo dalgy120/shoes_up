@@ -1,4 +1,6 @@
 import './Navbar.css';
+import CartWidget from './CartWidget';
+
 function Navbar() {
     return (
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -15,6 +17,9 @@ function Navbar() {
                 <li className='list nav-item'>
                     <a className='nav-link active' href="#">COLECCIONES</a></li>
             </ul>
+
+            <CartWidget></CartWidget>
+
         </nav>
     )
 }
