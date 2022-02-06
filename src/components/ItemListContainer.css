@@ -1,4 +1,10 @@
 .landing{
     font-size: 32px;
     color: #666;
+    margin-bottom: 200px;
+    display: block;
+}
+
+.listContainer {
+    display: block;
 }
