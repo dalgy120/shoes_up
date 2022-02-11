@@ -6,7 +6,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar></Navbar>
-			<ItemListContainer greeting='Hola Mundo!'></ItemListContainer>
+			<ItemListContainer greeting='Envío Gratis a Nivel Nacional ¡Solo Para Miembros!'></ItemListContainer>
 		</div>
 	);
 }
