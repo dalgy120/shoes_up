@@ -20,7 +20,7 @@ function ItemCount({stock, initial, onAdd}) {
     return (
         <div className='ItemContainerQuantity'>
             <div className='counter'>
-            <div className="btn-group btn-group-sm" role="group" aria-label="...">
+            <div className="btn-group btn-group-sm buttonQuantity" role="group" aria-label="...">
                 <button className='btn btn-outline-secondary' onClick={decrement}>-</button>
                 <span className='itemQuantity'>{quantity}</span>
                 <button className='btn btn-primary' onClick={increment}>+</button>

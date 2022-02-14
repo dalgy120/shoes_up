@@ -1,6 +1,6 @@
 .ItemContainerQuantity {
-    margin: auto;
-    width: 175px;
+    margin: 32px auto auto auto;
+    width: 100%;
     justify-content: right;
     padding: 6px 12px;
     -webkit-box-align: center;
@@ -9,7 +9,6 @@
 .counter {
     margin: auto;
     width: 100%;
-    height: 100%;
     background-color: rgb(239, 239, 239);
     -webkit-box-align: center;
     margin-bottom: 4px;
@@ -26,4 +25,10 @@
 }
 .itemQuantity {
     width: 24px;
+}
+
+.buttonQuantity{
+    display: flex;
+    justify-content: space-around;
+    max-width: 180px;
 }

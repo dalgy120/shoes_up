@@ -1,11 +1,10 @@
 import "./Item.css";
 import ItemCount from "./ItemCount";
 
-function Item(props) {
+function Item({product}) {
     function onAdd(quantity) {
         console.log(quantity);
     }
-    const product = props.product
     return (
         <div className="productContent">
             <img className="imgProduct" src={product.image}/>
