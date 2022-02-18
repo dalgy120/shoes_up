@@ -1,37 +1,34 @@
 import './ItemDetailContainer.css';
-import Zapato from '../image/Black-Converse.png';
 import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
+import { Information } from '../config';
+import { useParams } from 'react-router-dom';
 
-
-const Information = {   
-        id: 108,
-        image: Zapato,
-        name: 'Zapatilla Run New Arrival 2.0',
-        description: 'Zapatillas Inspiradas en el Movimiento Para Uso Diario. Este producto está hecho con Primegreen, una serie de materiales reciclados de alto desempeño. 50 % del exterior está hecho con material reciclado. No contienen poliéster virgen',
-        price: '$18.000',
-        stock: 5,
-        init: 1,
-    }
 
 
 function ItemDetailContainer(props) {
     const [product, setProduct] = useState()
-
-    const getItem = () => {
+    const params = useParams();
+    const getItem = (id) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(Information)
+                console.log(Information, id)
+                const productData = Information.filter(information => information.id == id);
+                if(productData.length)
+                    resolve(productData[0])
+                else
+                    resolve(null)
 
-            }, 2000)
+            }, 1000)
         })
     }
 
     useEffect(() => {
-        getItem().then((data) => {
+        const id = params.id
+        getItem(id).then((data) => {
             setProduct(data);
         })
-    }, [])
+    }, [params])
 
 
     return (

@@ -7,4 +7,11 @@
 
 .list {
     display: flex;
+    text-decoration: underline;
+}
+
+.logo a {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
 }
