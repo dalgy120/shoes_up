@@ -1,0 +1,45 @@
+.cartProduct{
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+    border-radius: 6px;
+    border: 1px solid #666;
+    margin: 16px;
+    box-sizing: border-box;
+}
+
+.cartImage {
+    display: flex;
+    max-width: 160px;
+    margin: 0;
+}
+
+.cartName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 240px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cartPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 160px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cartQuantity{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 160px;
+    font-size: 18px;
+    font-weight: 600;
+}

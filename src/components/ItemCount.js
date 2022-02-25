@@ -3,6 +3,7 @@ import './ItemCount.css'
 
 function ItemCount({stock, initial, onAdd}) {
     const [quantity, setQuantity] = useState(initial)
+
     function increment() {
         if (quantity >= stock) return false
         setQuantity(quantity+1)
@@ -13,7 +14,7 @@ function ItemCount({stock, initial, onAdd}) {
         setQuantity(quantity-1)
     }
 
-    function addToCart(){
+    function handleProduct(){
         onAdd(quantity)
     }
 
@@ -26,7 +27,7 @@ function ItemCount({stock, initial, onAdd}) {
                 <button className='btn btn-primary' onClick={increment}>+</button>
             </div>
             </div>
-            <button type="button" className="btn btn-outline-secondary" onClick={addToCart}>Agregar al carrito</button>
+            <button type="button" className="btn btn-outline-secondary" onClick={handleProduct}>Agregar al carrito</button>
         </div>
     )
 }

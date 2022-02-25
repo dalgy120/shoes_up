@@ -12,7 +12,6 @@ function ItemDetailContainer(props) {
     const getItem = (id) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                console.log(Information, id)
                 const productData = Information.filter(information => information.id === parseInt(id));
                 if(productData.length)
                     resolve(productData[0])
