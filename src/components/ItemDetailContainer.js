@@ -18,7 +18,7 @@ function ItemDetailContainer(props) {
                 else
                     resolve(null)
 
-            }, 1000)
+            }, 500)
         })
     }
 

@@ -32,7 +32,7 @@ function ItemDetail({product}) {
                 <span className="productPriceDetail">{product.price}</span>
                 <span>Stock disponible: {product.stock}</span>
                 {!inCart && <ItemCount stock={product.stock} initial={product.init} onAdd={onAdd}></ItemCount>}
-                {!!inCart && <Link to='/cart'>Finalizar Compra</Link>}
+                {!!inCart && <Link to='/cart'>Terminar Compra</Link>}
                 {!!inCart && <button onClick={() => removeItem(product.id)}>Eliminar del carro</button>}
             </div>
             <h2 className='titleProductDescription'>Descripción del producto</h2>

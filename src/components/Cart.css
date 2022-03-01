@@ -43,3 +43,12 @@
     font-size: 18px;
     font-weight: 600;
 }
+
+.keepBuying {
+    display: block;
+}
+
+.clearCart{
+    display: block;
+    margin: 16px auto;
+}

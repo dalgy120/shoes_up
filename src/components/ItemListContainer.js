@@ -15,7 +15,7 @@ function ItemListContainer() {
             setTimeout(() => {
                 const data = Information.filter(information => information.category === category)
                 resolve(data)
-            }, 1000)
+            }, 500)
         })
     }
 
