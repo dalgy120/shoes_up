@@ -1,7 +1,7 @@
 import './ItemDetailContainer.css';
 import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import { Information } from '../config';
+import {getFirestore} from './ItemCollection';
 import { useParams } from 'react-router-dom';
 
 
@@ -9,16 +9,17 @@ import { useParams } from 'react-router-dom';
 function ItemDetailContainer(props) {
     const [product, setProduct] = useState()
     const params = useParams();
+    
     const getItem = (id) => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                const productData = Information.filter(information => information.id === parseInt(id));
-                if(productData.length)
-                    resolve(productData[0])
-                else
-                    resolve(null)
+        const db = getFirestore()
+        const ItemCollection = db.collection('ItemCollection').where('id','==', id);
+        return ItemCollection.get().then((querySnapshot) => {
+            if(querySnapshot.size === 0) {
+                console.log('No results!');
+            }
 
-            }, 500)
+            const prod = querySnapshot.docs.map((prod) => prod.data());
+            return prod.length ? prod[0] : null
         })
     }
 

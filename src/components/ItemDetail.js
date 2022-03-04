@@ -23,7 +23,7 @@ function ItemDetail({product}) {
     }
 
     if(!product) return"";
-
+    
     return (
         <div className="productDetailContent">
             <img className="imgDetail" src={product.image} alt={product.name}/>
