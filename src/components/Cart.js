@@ -62,7 +62,7 @@ function Cart() {
                 </div>
             </section>}
             {!products.length && <span>Tu carro está vacío</span>}
-            {!products.length && <Link to={'/category/hombre'} className='keepBuying'>Seguir Comprando</Link>}
+            <Link to={'/category/hombre'} className='keepBuying'>Seguir Comprando</Link>
         </div>
     )
 
