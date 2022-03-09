@@ -15,6 +15,14 @@ const CartProvider = ({children}) => {
         }
         setProducts([...tempProd])
     }
+    const updateStock = (product) => {
+        const inCart = products.findIndex( prod => prod.id === product.id);
+        let tempProd = products.slice();
+        if(inCart !== -1){
+            tempProd[inCart].stock = product.stock;
+            setProducts([...tempProd])
+        }
+    }
 
     const removeItem = (id) => {
         let tempProd = products.map((product) =>  {
@@ -35,7 +43,7 @@ const CartProvider = ({children}) => {
         }
         return 0
     } 
-    return <CartContext.Provider value={{products, addToCart, removeItem, clear, isInCart}}>
+    return <CartContext.Provider value={{products, addToCart, removeItem, clear, isInCart, updateStock}}>
             {children}
     </CartContext.Provider>
 }

@@ -18,7 +18,9 @@ function ItemDetailContainer(props) {
                 console.log('No results!');
             }
 
-            const prod = querySnapshot.docs.map((prod) => prod.data());
+            const prod = querySnapshot.docs.map((prod) => {
+                return {...prod.data(), documentId: prod.id}
+            });
             return prod.length ? prod[0] : null
         })
     }

@@ -24,7 +24,9 @@ function ItemListContainer() {
                 console.log('No results!');
             }
 
-            return querySnapshot.docs.map((prod) => prod.data());
+            return querySnapshot.docs.map((prod) => {
+                return {...prod.data(), documentId: prod.id}
+            });
         })
     }
 

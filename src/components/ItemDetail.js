@@ -14,7 +14,7 @@ function ItemDetail({product}) {
             setInCart(isInCart(product.id))
         else
             setInCart(0)
-    },[product,products])
+    },[product, products])
 
     function onAdd(quantity){
         let prod = {...product, quantity};
