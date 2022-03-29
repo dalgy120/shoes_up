@@ -3,7 +3,7 @@ Este proyecto es una aplicacion web basada en ReactJS, destinado a ser un ecomme
 
 ## Autor
 
-Dalgy García
+Dalgy Yaneth García Zúñiga
 
 ## Pre-requitos
 ### `NPM 6.14.8`
@@ -16,7 +16,7 @@ Instalación de independencias.
 
 ### `npm start`
 
-Inicio de la aplicación web en modo desrrollo.
+Inicio de la aplicación web en modo desarrollo.
 Abrir [http://localhost:3000](http://localhost:3000)
 
 ### `npm test`
