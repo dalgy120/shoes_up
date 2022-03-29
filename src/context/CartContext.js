@@ -38,6 +38,7 @@ const CartProvider = ({children}) => {
 
     const isInCart = (id) => {
         const inCart = products.findIndex( prod => prod.id === id);
+        console.log(products)
         if(inCart !== -1){  
             return products[inCart].quantity
         }

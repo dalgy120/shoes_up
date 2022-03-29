@@ -52,3 +52,40 @@
     display: block;
     margin: 16px auto;
 }
+
+.CartContent{
+    display: flex;
+    flex-direction: column;
+}
+.cartProducts{
+    max-width: 100%;
+    width: 100%;
+}
+
+.cartTotals{
+    max-width: 100%;
+    width: 100%;
+    margin-top: 24px;
+}
+@media (min-width: 780px) {
+    
+    .CartContent{
+        flex-direction: row;
+    }
+    .cartProducts{
+        max-width: 80%;
+    }
+    .cartTotals{
+        max-width: 20%;
+        margin-top: 70px;
+    }
+}
+
+
+.lineItem{
+    font-size: 18px;
+}
+.totals{
+    font-size: 18px;
+    font-weight: 600;
+}

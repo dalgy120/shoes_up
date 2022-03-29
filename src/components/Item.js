@@ -33,8 +33,8 @@ function Item({product}) {
                     </Link>
                 </span>
                 <span className="productPrice"> <Link to={'/item/' + product.id}>{product.price}</Link></span>
-                <span>Stock disponible: {product.stock}</span>
-                <ItemCount stock={product.stock} initial={product.init} onAdd={onAdd}></ItemCount>
+                <span className="productStock">Stock disponible: {product.stock}</span>
+                <ItemCount stock={product.stock} initial={product.init} onAdd={onAdd} inCart={inCart}></ItemCount>
                 {!!inCart && <Link to='/cart'>Terminar Compra</Link>}
             </div>
         </div>

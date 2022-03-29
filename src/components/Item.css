@@ -14,10 +14,16 @@
 
 .productContent{
     border: 1px solid #d2cfcf;
-    margin: auto;
-    max-width: 200px;
+    margin: 0;
+    max-width: 240px;
     width: 100%;
     background-color: #f8f9fa;
+    
+}
+
+.productStock {
+    font-size: 12px;
+    color: #333;
 }
 .productContent a {
     color: #333;
@@ -31,7 +37,7 @@
 
 .productPrice {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 20px;
     display: block;
 }

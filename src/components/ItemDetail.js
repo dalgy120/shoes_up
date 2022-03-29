@@ -31,12 +31,14 @@ function ItemDetail({product}) {
                 <h1 className="productNameDetail">{product.name}</h1>
                 <span className="productPriceDetail">{product.price}</span>
                 <span>Stock disponible: {product.stock}</span>
-                {!inCart && <ItemCount stock={product.stock} initial={product.init} onAdd={onAdd}></ItemCount>}
-                {!!inCart && <Link to='/cart'>Terminar Compra</Link>}
-                {!!inCart && <button onClick={() => removeItem(product.id)}>Eliminar del carro</button>}
+                <ItemCount stock={product.stock} initial={product.init} onAdd={onAdd}></ItemCount>
+                {!!inCart && <Link to='/cart' className="">Terminar Compra</Link>}
+                {!!inCart && <button className="btn btn-secundary" onClick={() => removeItem(product.id)}>Eliminar del carro</button>}
             </div>
-            <h2 className='titleProductDescription'>Descripción del producto</h2>
-            <span  className="productDescriptionDetail">{product.description}</span>
+            <div className='wrapperDescription'>
+                <h2 className='titleProductDescription'>Descripción del producto</h2>
+                <div  className="productDescriptionDetail">{product.description}</div>
+            </div>
         </div>
     )
 

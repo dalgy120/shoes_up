@@ -40,7 +40,7 @@ function ItemListContainer() {
 
     return (
         <div className='listContainer'>
-            {params.categoryId && <h1>Categoria: {params.categoryId}</h1>}
+            {params.categoryId && <h1 className='titleCategory'>Categoria: {params.categoryId}</h1>}
             {!!products.length && <ItemList products={products}></ItemList>}
         </div>
     )

@@ -51,60 +51,71 @@ function Cart() {
                     stock: _prod.stock
                 })
                 setOrderID(id);
+                
             });
 
         })
     }
+    const validation = () => {
+        if(orderID){
+            clear();
+        }
+    }
 
     return (
         <div className="CartContent">
-            {!orderID && <h1>Carro de Compras</h1>}
-            {!!orderID && <h1>Gracias por tu compra</h1>}
-            {products.map((product, i) => {
-                return <div key={i} className='cartProduct'>
-                    <img alt={product.name} className="cartImage" src={product.image} />
-                    <span className="cartName">
-                        {product.name}
-                    </span>
-                    <span className="cartPrice">
-                        {product.price}
-                    </span>
-                    <span className="cartQuantity">
-                        {product.quantity}
-                    </span>
-                    {!orderID && <button onClick={() => deleteProduct(product.id)}>Eliminar</button>}
-                </div>
-            })}
-
-            {!!products.length && !orderID && <section>
-                <h5>TU CARRITO</h5>
-                <div className='miniCart'>
-
-                    <div>
-                        Productos {products.length}
+            <div className='cartProducts'>
+                {!orderID && <h1>Carro de Compras</h1>}
+                {!!orderID && <h1>Gracias por tu compra</h1>}
+                {!products.length && <span>Tu carro está vacío</span>}
+                {!products.length && <Link to={'/'} className='keepBuying'>Seguir Comprando</Link>}
+                {products.map((product, i) => {
+                    return <div key={i} className='cartProduct'>
+                        <img alt={product.name} className="cartImage" src={product.image} />
+                        <span className="cartName">
+                            {product.name}
+                        </span>
+                        <span className="cartPrice">
+                            {product.price}
+                        </span>
+                        <span className="cartQuantity">
+                            {product.quantity}
+                        </span>
+                        {!orderID && <button onClick={() => deleteProduct(product.id)}>Eliminar</button>}
                     </div>
+                })}
+            </div>
 
-                    <div>
-                        Subtotal {subtotal}
+            <div className='cartTotals'>
+                {!!products.length && !orderID && <section>
+                    <div className='miniCart'>
+                        <div className='lineItem'>
+                            Productos {products.length}
+                        </div>
+
+                        <div className='lineItem'>
+                            Subtotal {subtotal}
+                        </div>
+
+                        <div className='totals'>
+                            Total: {total}
+                        </div>
+
+                        <button onClick={purshase} className="btn btn-primary">Terminar Compra</button>
+                        <button onClick={() => emptyCart()} className="btn btn-secundary clearCart">Vaciar Carro</button>
+                        <Link to={'/'} className='keepBuying'>Seguir Comprando</Link>
+
                     </div>
-
+                </section>}
+                {orderID && <div>
+                    <h5>Número de orden: {orderID}</h5>
                     <div className='totals'>
                         Total: {total}
                     </div>
-
-                    <button onClick={purshase}>Terminar Compra</button>
-                    <button onClick={() => emptyCart()} className='clearCart'>Vaciar Carro</button>
-
-                </div>
-            </section>}
-            {orderID && <div>
-                <h5>Número de orden: {orderID}</h5>
-                <div className='totals'>
-                    Total: {total}
-                </div>
-            </div>}
-            {!products.length && <span>Tu carro está vacío</span>}
-            <Link to={'/category/hombre'} className='keepBuying'>Seguir Comprando</Link>
+                    <Link to={'/'} onClick={() => validation()} className='keepBuying'>Seguir Comprando</Link>
+                </div>}
+            </div>
+           
         </div>
     )
 
